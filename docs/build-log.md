@@ -71,6 +71,8 @@ Mark with `[x]` when done. Fill a line per stage with the Serial output observed
 - [ ] Runs from the power bank, **no wall/USB programming cable during demo**
 - [ ] LCD row1 shows `<time>  <grams>`
 - [ ] RTC keeps time after unplugging power 5 min (CR2032)
+- [ ] **RTC synced from PC before the power-bank run:** plug into PC →
+      `python3 tools/rtc_sync.py` → `OK,time set`; unplug and the clock keeps ticking
 - [ ] `feed` → food falls, screen "FED Xg", 2 beeps
 - [ ] Portion matches setting (±3 g)
 - [ ] Bowl empty → "BOWL EMPTY" line

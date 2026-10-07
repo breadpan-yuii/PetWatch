@@ -135,6 +135,11 @@ Editable at the top of `petwatch.ino` under "USER-TUNABLE SETTINGS".
 > I2C display at `0x27`. Set it to `0` to run with no LCD attached: the two display lines then
 > stream to the Serial Monitor as `LCD:...` every 2 s.
 
+> **Set the clock for a demo:** plug the feeder into any PC (Linux/Windows/macOS) and run
+> `python3 tools/rtc_sync.py` — it pushes the computer's time to the RTC via `settime` and
+> exits. The DS3231 then keeps the time by itself on the power bank. No installs needed:
+> stock Python 3 (pyserial is used only if already present).
+
 | Command | Purpose |
 |---------|---------|
 | `tare` | Zero the scale with the empty bowl in place |
@@ -177,6 +182,9 @@ PetWatch/
 ├── docs/
 │   ├── wiring.md        ← print-ready wiring/assembly sheet
 │   └── build-log.md     ← stage verification checklist (progress evidence)
+├── tools/
+│   ├── rtc_sync.py      ← push the PC's clock to the RTC before a demo (no deps)
+│   └── petwatch_gateway.py ← serial→webhook IoT gateway
 └── assets/
     ├── expected-outcome.png   ← build diagram
     └── (photos of the build)
